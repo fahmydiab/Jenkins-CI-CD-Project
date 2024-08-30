@@ -53,8 +53,8 @@ pipeline {
                 // here Jenkins will look for credentials saved by the user with id "github" and save as the value of GITHUB_TOKEN
                 withCredentials([string(credentialsId: 'github-id', variable: 'GITHUB_TOKEN')]) {
                     sh '''
-                        git config user.email "bandhanmajumder16@gmail.com"
-                        git config user.name "Bandhan Majumder"
+                        git config user.email "fahmy1.diab@gmail.com"
+                        git config user.name "Fahmy Diab"
                         BUILD_NUMBER=${BUILD_NUMBER}
                         ls -ltr
                         sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" demo-app-manifests/deployment.yaml
