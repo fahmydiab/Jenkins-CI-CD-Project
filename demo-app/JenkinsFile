@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Static Code Analysis') {
         environment {
-            SONAR_URL = "http://43.204.130.176:9000"
+            SONAR_URL = "http://localhost:9000"
         }
         steps {
             withCredentials([string(credentialsId: 'sonarqube-cred', variable: 'SONAR_AUTH_TOKEN')]) {
@@ -35,7 +35,7 @@ pipeline {
         }
         stage('Build and push Docker Image') {
             environment {
-                DOCKER_IMAGE = "bandhan99/ci-cd-jenkins:${BUILD_NUMBER}"
+                DOCKER_IMAGE = "fahmy1diab/ci-cd-jenkins:${BUILD_NUMBER}"
                 REGISTRY_CREDENTIALS = credentials('docker-cred')
                 // uses the credentials saved with id "docker-cred" in DockerHub
             }
