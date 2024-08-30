@@ -1,13 +1,5 @@
 pipeline {
-    agent {
-        docker { 
-            image 'abhishekf5/maven-abhishek-docker-agent:v1' // use this image
-            args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
-            // purpose of additional argument [args]: enable Docker-in-Docker (DinD) functionality. 
-            // By mounting the Docker socket from the host into the container, you allow the Docker CLI inside the container to communicate with the Docker daemon on the host machine. 
-            // This means you can run Docker commands inside the container, and those commands will be executed by the host's Docker daemon.
-        }
-    }
+    agent any
     stages {
         stage('Checkout') {
             steps {
