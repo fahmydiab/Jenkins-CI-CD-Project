@@ -57,7 +57,7 @@ pipeline {
                         git config user.name "Fahmy Diab"
                         BUILD_NUMBER=${BUILD_NUMBER}
                         ls -ltr
-                        sed -i "s/fahmy1diab/ci-cd-jenkins:[0-9]\+/fahmy1diab/ci-cd-jenkins:${BUILD_NUMBER}/g" demo-app-manifests/deployment.yaml
+                        sed -i "s/fahmy1diab/ci-cd-jenkins:[0-9]+/fahmy1diab/ci-cd-jenkins:${BUILD_NUMBER}/g" demo-app-manifests/deployment.yaml
                         git add demo-app-manifests/deployment.yaml
                         git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                         git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
