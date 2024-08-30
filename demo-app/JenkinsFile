@@ -47,7 +47,7 @@ pipeline {
         stage('Update Deployment File in GitHub') {
             environment {
                 GIT_REPO_NAME = "Jenkins-CI-CD-Project"
-                GIT_USER_NAME = "bandhan-majumder"
+                GIT_USER_NAME = "fahmydiab"
             }
             steps {
                 // here Jenkins will look for credentials saved by the user with id "github" and save as the value of GITHUB_TOKEN
