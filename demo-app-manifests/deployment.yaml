@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
-        image: fahmy1diab/ci-cd-jenkins:31
+        image: fahmy1diab/ci-cd-jenkins:30
         ports:
         - containerPort: 8080
