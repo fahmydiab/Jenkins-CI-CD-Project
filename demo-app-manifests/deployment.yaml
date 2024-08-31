@@ -19,3 +19,9 @@ spec:
         image: fahmy1diab/ci-cd-jenkins:31
         ports:
         - containerPort: 8080
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  revisionHistoryLimit: 10
